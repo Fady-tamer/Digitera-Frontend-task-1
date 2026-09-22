@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root { --background: #f9f7f3; --foreground: #1b1b1a; --line: #dedbd5; --muted: #77736d; }
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+.site-header { background: #faf9f7; border-bottom: 1px solid var(--line); }
+.announcement { height: 21px; display: grid; place-items: center; background: #1b1b1a; color: #fff; font-size: 7px; text-transform: uppercase; letter-spacing: .05em; }
+.header-inner { max-width: 1180px; height: 69px; margin: auto; padding: 0 22px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+.header-nav, .header-tools { display: flex; align-items: center; gap: 25px; text-transform: uppercase; font-size: 9px; color: #4f4d48; }
+.wordmark, .footer-brand { font-family: Georgia, serif; font-size: 20px; letter-spacing: .24em; font-weight: 400; }
+.header-tools { justify-content: flex-end; gap: 17px; text-transform: none; }
+.search-pill { border: 1px solid #e2dfd9; border-radius: 30px; padding: 7px 14px; width: 145px; color: #77736d; font-size: 9px; }
+.product-shell { max-width: 1180px; margin: auto; padding: 17px 22px 72px; }
+.breadcrumb { color: #77736d; font-size: 9px; margin-bottom: 18px; }.breadcrumb span { padding: 0 8px; color: #aaa59d; }.breadcrumb b { color: #1b1b1a; font-weight: 400; }
+.product-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; }
+.hero-image { position: relative; height: 495px; overflow: hidden; border-radius: 5px; background: #ddd; }.hero-image img, .thumb img, .companion-image img { object-fit: cover; }
+.thumb-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 11px; }.thumb { position: relative; height: 77px; overflow: hidden; border-radius: 3px; }
+.purchase-panel { padding-top: 1px; position: relative; }.eyebrows { display: flex; gap: 9px; text-transform: uppercase; font-size: 8px; color: #55514a; }.eyebrows span { background: #efede8; border-radius: 9px; padding: 4px 7px; }
+.purchase-panel h1, .anatomy h2, .companions h2 { font-family: Georgia, serif; font-weight: 400; }.purchase-panel h1 { font-size: 28px; margin: 15px 0 8px; }.price { font-size: 16px; }.availability { position: absolute; right: 0; top: 99px; font-size: 9px; color: #179c70; }.availability i { display: inline-block; width: 5px; height: 5px; background: #179c70; border-radius: 50%; margin-right: 4px; }
+.rule { border-top: 1px solid var(--line); margin: 22px 0 18px; }.label { display: block; text-transform: uppercase; font-size: 8px; margin-bottom: 8px; }.volume-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }.volume { height: 42px; background: transparent; border: 1px solid #e8e4dc; cursor: pointer; font-size: 10px; }.volume small { display: block; font-size: 8px; color: #96918a; margin-top: 3px; }.volume.active { border-color: #171716; }
+.gift-box { display: flex; align-items: center; justify-content: space-between; margin-top: 17px; padding: 14px; background: #f1eee8; font-size: 9px; }.gift-box small { display: block; color: #77736d; font-size: 8px; margin-top: 4px; }.gift-box b { color: #bd9f74; font-size: 22px; font-weight: 400; }.cart-row { display: flex; gap: 10px; margin-top: 18px; }.quantity { display: flex; width: 50px; height: 36px; align-items: center; justify-content: space-around; border: 1px solid #e1ddd6; }.quantity button { border: 0; background: none; cursor: pointer; }.action-button { flex: 1; }.action-button button { width: 100%; height: 36px; border: 0; border-radius: 2px; background: #1b1b1a; color: white; text-transform: uppercase; font-size: 9px; cursor: pointer; }
+.anatomy { margin-top: 36px; }.anatomy h2 { font-size: 19px; margin-bottom: 12px; }.anatomy p { color: #77736d; line-height: 1.6; font-size: 10px; }.note-row { border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: 12px 0; text-transform: uppercase; font-size: 8px; }.note-row span { color: #77736d; text-transform: none; }
+.companions { background: #f2eee8; padding: 56px 22px 82px; text-align: center; }.companions h2 { font-size: 25px; margin: 0; }.companions > p { color: #77736d; font-family: Georgia, serif; font-size: 9px; text-transform: uppercase; margin: 10px 0 27px; }.companion-grid { max-width: 980px; margin: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 17px; text-align: left; }.companion { background: #fff; padding: 9px; border-radius: 5px; }.companion-image { display: block; position: relative; height: 270px; }.companion-meta { display: flex; justify-content: space-between; font-family: Georgia, serif; font-size: 11px; margin-top: 11px; }.companion-meta b { font-family: Arial, sans-serif; font-size: 9px; font-weight: 400; }.companion > small { display: block; color: #b08e68; text-transform: uppercase; font-size: 7px; margin: 5px 0 12px; }.companion-button { display: block; border: 1px solid #e7e2da; padding: 8px; text-align: center; text-transform: uppercase; font-size: 8px; }
+.site-footer { background: #1b1b1a; color: #f4f1eb; display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 45px; padding: 55px max(22px, calc((100% - 1180px) / 2)); min-height: 220px; }.site-footer p { color: #aaa7a1; font-size: 9px; line-height: 1.7; margin: 11px 0; max-width: 230px; }.site-footer b { color: #c8a979; text-transform: uppercase; font-size: 8px; font-weight: 400; }.socials { color: #aaa7a1; margin-top: 18px; }
+@media (max-width: 800px) { .header-inner { grid-template-columns: 1fr auto; height: 60px; }.header-nav { display: none; }.header-tools { gap: 9px; }.search-pill { display: none; }.product-shell { padding: 15px 16px 50px; }.product-layout { grid-template-columns: 1fr; gap: 35px; }.hero-image { height: min(110vw, 500px); }.purchase-panel h1 { font-size: 25px; }.availability { top: 98px; }.companion-grid { grid-template-columns: repeat(2, 1fr); }.companion-image { height: 210px; }.site-footer { grid-template-columns: 1fr 1fr; padding: 40px 22px; gap: 25px; } }
+@media (max-width: 430px) { .wordmark { font-size: 16px; }.header-tools > span[aria-label] { display: none; }.thumb { height: 65px; }.companion-grid { gap: 8px; }.companion { padding: 7px; }.companion-image { height: 170px; }.site-footer { grid-template-columns: 1fr; } }
