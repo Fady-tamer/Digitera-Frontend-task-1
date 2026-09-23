@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { ProductBreadcrumbs } from "@/features/products/components/ProductBreadcrumbs";
 import { ProductFilters } from "@/features/products/components/ProductFilters";
 import { ProductGrid } from "@/features/products/components/ProductGrid";
 import { ProductPagination } from "@/features/products/components/ProductPagination";
 import { ProductSortControl } from "@/features/products/components/ProductSort";
+import { productPaths } from "@/features/products/paths";
 import { useProducts } from "@/features/products/hooks/useProducts";
 import type { ProductSearchParams } from "@/features/products/types/product.types";
 import { parseProductListQuery } from "@/features/products/utils/product.utils";
@@ -33,15 +35,51 @@ export function ProductsPage({ searchParams }: ProductsPageProps) {
         <div className="flex min-w-0 flex-1 flex-col items-start gap-6">
           <ProductSortControl
             value={query.sort ?? "price-desc"}
-            availableCount={24}
+            availableCount={productsQuery.data?.total ?? 0}
           />
           <ProductGrid
             products={productsQuery.data?.items ?? []}
             isLoading={productsQuery.isLoading}
           />
-          <ProductPagination page={1} pageSize={6} total={24} />
+          <ProductPagination
+            page={productsQuery.data?.page ?? query.page ?? 1}
+            pageSize={productsQuery.data?.pageSize ?? query.pageSize ?? 6}
+            total={productsQuery.data?.total ?? 0}
+          />
         </div>
       </div>
+      <footer className="home-footer">
+        <div className="home-footer-brand">
+          <div>ODORATUS</div>
+          <p>
+            An independent olfactory house cultivating slow-luxury liquid
+            narratives. Every bottle is hand-poured in small batches using
+            sustainably sourced botanicals.
+          </p>
+          <span>◎ &nbsp; ◌ &nbsp; ◉</span>
+        </div>
+        <div>
+          <b>Collections</b>
+          <Link href={productPaths.list}>La Maison</Link>
+          <Link href={productPaths.list}>Private Reserve</Link>
+          <Link href={productPaths.list}>Scented Candles</Link>
+          <Link href={productPaths.list}>Discovery Sets</Link>
+        </div>
+        <div>
+          <b>Customer Care</b>
+          <Link href={productPaths.list}>Olfactory Consultation</Link>
+          <Link href={productPaths.list}>Shipping &amp; Returns</Link>
+          <Link href={productPaths.list}>Atelier Appointments</Link>
+          <Link href={productPaths.list}>Care Guide</Link>
+        </div>
+        <div>
+          <b>About Us</b>
+          <Link href={productPaths.list}>Our Philosophy</Link>
+          <Link href={productPaths.list}>Sourcing Standards</Link>
+          <Link href={productPaths.list}>Sustainability Commitments</Link>
+          <Link href={productPaths.list}>Journal</Link>
+        </div>
+      </footer>
     </section>
   );
 }

@@ -13,13 +13,14 @@ export function ProductDetailsWithCart({
   return (
     <ProductDetailsPage
       productId={productId}
-      actions={({ product, selectedOptions }) => (
+      actions={({ product, selectedOptions, quantity }) => (
         <AddToCartButton
           productId={product.id}
           name={product.name}
           price={product.price}
           image={product.images[0]}
           selectedOptions={selectedOptions}
+          quantity={quantity}
         />
       )}
     />

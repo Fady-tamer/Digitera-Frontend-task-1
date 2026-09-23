@@ -19,15 +19,16 @@ export type Product = {
   options: ProductOption[];
 };
 
-export type ProductSort =
-  | "name-asc"
-  | "name-desc"
-  | "price-asc"
-  | "price-desc";
+export type ProductSort = "name-asc" | "name-desc" | "price-asc" | "price-desc";
 
 export type ProductListQuery = {
   search?: string;
   category?: string;
+  categories?: string[];
+  scentFamilies?: string[];
+  occasions?: string[];
+  minPrice?: number;
+  maxPrice?: number;
   sort?: ProductSort;
   page?: number;
   pageSize?: number;
@@ -40,7 +41,4 @@ export type ProductListResult = {
   pageSize: number;
 };
 
-export type ProductSearchParams = Record<
-  string,
-  string | string[] | undefined
->;
+export type ProductSearchParams = Record<string, string | string[] | undefined>;
